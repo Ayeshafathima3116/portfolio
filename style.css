@@ -38,7 +38,7 @@ body {
   height: 64px;
 }
 .logo {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: #1e293b;
 }
@@ -109,19 +109,19 @@ body {
   
 }
 .hero-title {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   color: #1e293b;
   line-height: 1.2;
   margin-bottom: 16px;
 }
 .hero-subtitle {
-  font-size: 24px;
+  font-size: 20px;
   color: #6b7280;
   margin-bottom: 24px;
 }
 .hero-description {
-  font-size: 18px;
+  font-size: 16px;
   color: #374151;
   line-height: 1.6;
   margin-bottom: 32px;
@@ -193,7 +193,7 @@ body {
   gap: 48px;
 }
 .about-heading {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #1e293b;
   margin-bottom: 24px;
@@ -236,7 +236,7 @@ body {
   color: #000;
 }
 .skills-heading {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #1e293b;
   margin-bottom: 24px;
@@ -336,7 +336,7 @@ body {
   flex: 1;
 }
 .timeline-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #1e293b;
   margin-bottom: 12px;
@@ -397,7 +397,7 @@ body {
 }
 
 .project-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #1e293b;
   margin-bottom: 16px;
@@ -505,7 +505,7 @@ body {
     }
 
     .section-title {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: bold;
       color: #222;
     }
@@ -647,7 +647,7 @@ body {
   background: #fff;
 }
 .contact-heading {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #1e293b;
   margin-bottom: 24px;
