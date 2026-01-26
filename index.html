@@ -26,20 +26,20 @@
         extend: {
           colors: {
             primary: {
-              DEFAULT: '#22d3ee',
-              dark: '#0891b2',
+              DEFAULT: '#f87171',
+              dark: '#ef4444',
             },
             secondary: {
-              DEFAULT: '#fb7185',
-              dark: '#e11d48',
+              DEFAULT: '#fbbf24',
+              dark: '#f59e0b',
             },
             accent: {
-              DEFAULT: '#0ea5e9',
+              DEFAULT: '#ea580c',
             },
             dark: {
-              bg: '#020617',
+              bg: '#050E3C',
               card: 'rgba(15, 23, 42, 0.6)',
-              border: 'rgba(255, 255, 255, 0.08)'
+              border: 'rgba(255, 255, 255, 0.1)'
             }
           },
           fontFamily: {
@@ -54,7 +54,7 @@
   <style>
     /* Base styles to prevent FOUC and provide fallbacks */
     body {
-      background-color: #020617;
+      background-color: #050E3C;
       color: #e2e8f0;
       margin: 0;
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -62,8 +62,8 @@
 
     .body-gradient {
       background-image:
-        radial-gradient(at 0% 0%, rgba(34, 211, 238, 0.1) 0, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(251, 113, 133, 0.1) 0, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(248, 113, 113, 0.1) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(251, 191, 36, 0.1) 0, transparent 50%);
     }
 
     .custom-scrollbar::-webkit-scrollbar {
@@ -71,18 +71,18 @@
     }
 
     .custom-scrollbar::-webkit-scrollbar-track {
-      background: #020617;
+      background: #050E3C;
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: rgba(34, 211, 238, 0.2);
+      background: rgba(248, 113, 113, 0.2);
       border-radius: 9999px;
       border: 2px solid transparent;
       background-clip: padding-box;
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-      background: rgba(34, 211, 238, 0.4);
+      background: rgba(248, 113, 113, 0.4);
       background-clip: padding-box;
     }
 
@@ -160,7 +160,7 @@
         background-size: 40px 40px;
       }
       .skill-bar-fill {
-        box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+        box-shadow: 0 0 15px rgba(248, 113, 113, 0.3);
         transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .scroll-progress {
@@ -208,7 +208,7 @@
         { name: "TensorFlow", category: "AI Tools", level: 75, icon: "brain" },
         { name: "Machine Learning", category: "AI Tools", level: 85, icon: "activity" },
         { name: "Git", category: "Tools", level: 85, icon: "git-branch" },
-        { name: "GitHub", category: "Tools", level: 85, icon: "github-branch" }
+        { name: "GitHub", category: "Tools", level: 85, icon: "github" }
       ],
       projects: [
         {
@@ -332,7 +332,7 @@
       }, []);
 
       return (
-        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'bg-slate-950/20 backdrop-blur-sm py-5 border-b border-white/5'}`}>
+        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'bg-[#050E3C]/20 backdrop-blur-sm py-5 border-b border-white/5'}`}>
           <div className="container mx-auto px-6 flex justify-between items-center">
             <a href="#" className="flex items-center gap-2 group">
               <span className="text-xl font-outfit font-bold tracking-tighter">
@@ -379,11 +379,20 @@
 
       return (
         <section id="home" className="min-h-screen flex items-center pt-20 bg-pattern relative overflow-hidden">
-
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+          >
+            <source src="bg-video.mp4" type="video/mp4" />
+          </video>
 
           <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div data-aos="fade-right">
-              <h2 className="text-primary font-bold tracking-[0.2em] text-sm mb-4 uppercase drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">Creative Developer</h2>
+              <h2 className="text-primary font-bold tracking-[0.2em] text-sm mb-4 uppercase drop-shadow-[0_0_8px_rgba(248,113,113,0.5)]">Creative Developer</h2>
               <h1 className="text-3xl md:text-6xl font-outfit font-bold mb-6 leading-tight">
                 I'm <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary animate-gradient-x">{STUDENT_DATA.name}</span>
               </h1>
@@ -393,7 +402,7 @@
               </div>
               <p className="text-slate-400 text-base mb-8 max-w-xl leading-relaxed">{STUDENT_DATA.tagline}</p>
               <div className="flex flex-wrap gap-4">
-                <a href="#contact" className="bg-primary hover:bg-primary-dark text-slate-950 px-8 py-4 rounded-xl font-black transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]">Connect</a>
+                <a href="#contact" className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-black transition-all shadow-[0_0_20px_rgba(248,113,113,0.4)] hover:shadow-[0_0_30px_rgba(248,113,113,0.6)]">Connect</a>
                 <a href="#projects" className="glass hover:bg-white/10 px-8 py-4 rounded-xl font-bold transition-all border-white/20">Projects</a>
                 <a href={STUDENT_DATA.resumeUrl} target="_blank" className="bg-secondary/10 border border-secondary/30 text-secondary hover:bg-secondary hover:text-white px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2 group shadow-[0_0_15px_rgba(251,113,133,0.1)]">
                   <i data-lucide="download" className="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
@@ -411,11 +420,11 @@
 
             <div className="relative group max-w-sm mx-auto" data-aos="zoom-in" data-aos-duration="1500">
               <div className="absolute -inset-1 bg-gradient-to-tr from-primary via-accent to-secondary opacity-30 blur-2xl group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative glass p-3 rounded-[3rem] border-white/10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-500">
+              <div className="relative glass p-3 rounded-[3rem] border-white/10 overflow-hidden transform group-hover:scale-[1.05] group-hover:rotate-2 transition-transform duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
                 <img src={STUDENT_DATA.profilePic} alt="Profile" className="w-full aspect-[4/5] object-cover rounded-[2.5rem]" />
               </div>
-              <div className="absolute -bottom-8 -left-8 glass p-6 rounded-3xl animate-float border-primary/30 shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+              <div className="absolute -bottom-8 -left-8 glass p-6 rounded-3xl animate-float border-primary/30 shadow-[0_0_20px_rgba(248,113,113,0.2)]">
                 <div className="text-primary font-black text-2xl uppercase tracking-tighter">Final Year</div>
                 <div className="text-[10px] font-bold opacity-60 uppercase tracking-widest">B.Tech Student @ AI</div>
               </div>
@@ -472,29 +481,59 @@
 
     const Skills = () => {
       const categories = [...new Set(STUDENT_DATA.skills.map(s => s.category))];
+      const [animate, setAnimate] = useState(false);
+
+      useEffect(() => {
+        const handleScroll = () => {
+          const section = document.getElementById('skills');
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) setAnimate(true);
+          }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check on mount
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      const catIcons = {
+        "Frontend": "monitor",
+        "Backend": "server",
+        "Databases": "database",
+        "AI Tools": "brain",
+        "Tools": "settings"
+      };
+
       return (
         <section id="skills" className="py-20 relative overflow-hidden">
           <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
           <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-center text-3xl md:text-4xl font-outfit font-black mb-16 uppercase tracking-tighter" data-aos="fade-up">Technical <span className="text-primary">Arsenal</span></h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="text-center text-3xl md:text-4xl font-outfit font-black mb-16 uppercase tracking-tighter" data-aos="fade-up">Technical <span className="text-primary text-glow">Arsenal</span></h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {categories.map((cat, idx) => (
-                <div key={cat} className="glass-card p-6 rounded-2xl group" data-aos="fade-up" data-aos-delay={idx * 100}>
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-black uppercase text-white tracking-widest">{cat}</h3>
-                    <div className="text-primary opacity-30 group-hover:opacity-100 transition-opacity"><i data-lucide="cpu" className="w-6 h-6"></i></div>
+                <div key={cat} className="glass-card p-6 rounded-3xl group hover:bg-white/5 transition-all duration-500" data-aos="fade-up" data-aos-delay={idx * 100}>
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 glass rounded-xl text-primary group-hover:scale-110 transition-transform">
+                        <i data-lucide={catIcons[cat] || "cpu"} className="w-6 h-6"></i>
+                      </div>
+                      <h3 className="text-lg font-black uppercase text-white tracking-widest">{cat}</h3>
+                    </div>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     {STUDENT_DATA.skills.filter(s => s.category === cat).map(skill => (
-                      <div key={skill.name} className="space-y-2">
-                        <div className="flex justify-between text-xs font-black uppercase tracking-widest">
-                          <span className="text-slate-400">{skill.name}</span>
+                      <div key={skill.name} className="space-y-3">
+                        <div className="flex justify-between items-center text-xs font-black uppercase tracking-widest">
+                          <div className="flex items-center gap-2">
+                            <i data-lucide={skill.icon} className="w-4 h-4 text-slate-500 group-hover:text-primary transition-colors"></i>
+                            <span className="text-slate-400 group-hover:text-white transition-colors">{skill.name}</span>
+                          </div>
                           <span className="text-primary">{skill.level}%</span>
                         </div>
-                        <div className="h-1.5 bg-slate-950 rounded-full border border-white/5 p-0.5 overflow-hidden">
+                        <div className="h-2 bg-slate-950/50 rounded-full border border-white/5 overflow-hidden backdrop-blur-sm">
                           <div
-                            className="h-full bg-gradient-to-r from-primary to-accent rounded-full skill-bar-fill"
-                            style={{ width: `${skill.level}%` }}
+                            className="h-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full skill-bar-fill shadow-[0_0_10px_rgba(248,113,113,0.2)]"
+                            style={{ width: animate ? `${skill.level}%` : '0%' }}
                           ></div>
                         </div>
                       </div>
@@ -531,10 +570,10 @@
                   onMouseLeave={() => setHovered(null)}
                 >
                   <div className="h-80 overflow-hidden relative">
-                    <img src={p.image} className={`w-full h-full object-cover transition-transform duration-1000 ${hovered === idx ? 'scale-110 rotate-1' : 'scale-100'}`} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent opacity-80"></div>
+                    <img src={p.image} className={`w-full h-full object-cover transition-transform duration-1000 ${hovered === idx ? 'scale-125 rotate-2' : 'scale-100'}`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050E3C] via-[#050E3C]/40 to-transparent opacity-80"></div>
                     <div className="absolute top-6 left-6 flex gap-2">
-                      <span className="px-5 py-2 glass rounded-full text-xs font-black uppercase tracking-widest text-primary border-primary/30 shadow-[0_0_15px_rgba(34,211,238,0.2)]">AI Powered</span>
+                      <span className="px-5 py-2 glass rounded-full text-xs font-black uppercase tracking-widest text-primary border-primary/30 shadow-[0_0_15px_rgba(248,113,113,0.2)]">AI Powered</span>
                     </div>
                   </div>
                   <div className="p-8 -mt-20 relative z-10">
@@ -568,7 +607,7 @@
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent"></div>
             {STUDENT_DATA.education.map((edu, idx) => (
               <div key={idx} className={`flex flex-col md:flex-row gap-12 items-center relative ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`} data-aos={idx % 2 === 0 ? "fade-left" : "fade-right"}>
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-slate-950 border-4 border-primary shadow-[0_0_15px_rgba(34,211,238,0.5)] z-20"></div>
+                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#050E3C] border-4 border-primary shadow-[0_0_15px_rgba(248,113,113,0.5)] z-20"></div>
                 <div className="w-full md:w-1/2 md:px-12 text-left md:text-right hidden md:block">
                   <div className="text-primary font-black text-2xl tracking-tighter opacity-70 italic">{edu.period}</div>
                 </div>
@@ -611,7 +650,7 @@
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
                     <div className="flex justify-between items-start mb-8 relative z-10">
-                      <div className="p-4 glass border-primary/20 rounded-2xl transition-all duration-500 shadow-[0_0_20px_rgba(34,211,238,0.1)]">
+                      <div className="p-4 glass border-primary/20 rounded-2xl transition-all duration-500 shadow-[0_0_20px_rgba(248,113,113,0.1)]">
                         <svg width="32" height="32" viewBox="0 0 37 37"><path d="M18.5 2L22.5 14H35L25.5 22L29.5 34L18.5 26L7.5 34L11.5 22L2 14H14.5L18.5 2Z" fill={cert.color} /></svg>
                       </div>
                       <span className="text-[10px] font-black text-primary uppercase tracking-[0.3em] bg-primary/10 px-3 py-1.5 rounded-full">{cert.date}</span>
@@ -639,7 +678,7 @@
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[150px] -mr-48 -mt-48"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 blur-[150px] -ml-48 -mb-48"></div>
 
-            <h2 className="text-3xl md:text-5xl font-outfit font-black mb-8 uppercase tracking-tighter animate-pulse-slow">Let's <span className="text-primary drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Collaborate</span></h2>
+            <h2 className="text-3xl md:text-5xl font-outfit font-black mb-8 uppercase tracking-tighter animate-pulse-slow">Let's <span className="text-primary drop-shadow-[0_0_15px_rgba(248,113,113,0.5)]">Collaborate</span></h2>
             <p className="text-slate-400 text-xl mb-16 max-w-3xl mx-auto leading-relaxed font-medium">Currently seeking opportunities to shape the future of AI and Web. My inbox is always open.</p>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
